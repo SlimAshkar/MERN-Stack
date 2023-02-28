@@ -18,6 +18,7 @@ function Register() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  console.log(dispatch);
 
   const { user, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
@@ -43,7 +44,7 @@ function Register() {
   };
 
   const onSubmit = (e) => {
-    e.preventDeafult();
+    e.preventDefault();
 
     if (password !== password2) {
       toast.error("Passwords do not match");
@@ -66,9 +67,9 @@ function Register() {
     <>
       <section className="heading">
         <h1>
-          <FaUser /> הרשמה
+          <FaUser /> Register
         </h1>
-        <p>נא ליצור חשבון</p>
+        <p>Please Create an account</p>
       </section>
 
       <section className="form">
